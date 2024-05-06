@@ -112,7 +112,7 @@ with tab1:
     st.write("Position Value = ",round(value,4))
 
 with tab2:
-    st.title("Futures and Forwards Calculations")
+    st.title("Hedging Calculations")
     st.subheader("Average Price Paid", divider="red")
     col1, col2 = st.columns(2)
     with col1:
