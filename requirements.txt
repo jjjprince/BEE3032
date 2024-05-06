@@ -1,7 +1,6 @@
 streamlit
 datetime
 matplotlib
-math
 scipy
 pandas
 opstrat
