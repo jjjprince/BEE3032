@@ -221,6 +221,51 @@ with tab3:
         st.set_option('deprecation.showPyplotGlobalUse', False)
         st.pyplot(fig)
 
+    if type == "Straddle":
+        col1 , col2 = st.columns(2)
+        with col1:
+            K1 = st.number_input("Strike", min_value=0.0001, key="stradk1")
+        with col2:
+            p1 = st.number_input("Price of Call", min_value=0.0001,key="stradp1")
+            p2 = st.number_input("Price of Put", min_value=0.0001,key="stradp2")
+
+        st.text("")
+        p = p1+p2
+        breakeven_l = K1 - p
+        breakeven_h = K1 + p
+        st.write(f"Price of Strategy: {round(p,4)}")
+        st.write(f"Breakeven Spot Price: {round(breakeven_l,4)} and {round(breakeven_h,4)} ")
+        st.write("$^*$Breakeven price assumes no movement in underlying option value, prices shown below at expiry")
+        st.text("")
+        op_1={'op_type':'p','strike':K1,'tr_type':'b','op_pr':p1}
+        op_2={'op_type':'p','strike':K1,'tr_type':'b','op_pr':p2}
+        fig = op.multi_plotter(spot = s_t, spot_range = 30,op_list=[op_1,op_2])
+        st.set_option('deprecation.showPyplotGlobalUse', False)
+        st.pyplot(fig)
+    
+    if type == "Strangle":
+        col1 , col2 = st.columns(2)
+        with col1:
+            K1 = st.number_input("Call Strike", min_value=0.0001, key="strangk1")
+            K2 = st.number_input("Put Strike", min_value=0.0001,key="strangk2")
+        with col2:
+            p1 = st.number_input("Price of Higher Strike", min_value=0.0001,key="strangp1")
+            p2 = st.number_input("Price of Lower Strike", min_value=0.0001,key="strangp2")
+
+        st.text("")
+        p = p1+p2
+        breakeven_l = K2 - p
+        breakeven_h = K1 + p
+        st.write(f"Price of Strategy: {round(p,4)}")
+        st.write(f"Breakeven Spot Price: {round(breakeven_l,4)} and {round(breakeven_h,4)} ")
+        st.write("$^*$Breakeven price assumes no movement in underlying option value, prices shown below at expiry")
+        st.text("")
+        op_1={'op_type':'c','strike':K1,'tr_type':'b','op_pr':p1}
+        op_2={'op_type':'p','strike':K2,'tr_type':'b','op_pr':p2}
+        fig = op.multi_plotter(spot = s_t, spot_range = 30,op_list=[op_1,op_2])
+        st.set_option('deprecation.showPyplotGlobalUse', False)
+        st.pyplot(fig)
+
     if type == "Butterfly":
         col1 , col2 = st.columns(2)
         with col1:
