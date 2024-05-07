@@ -169,7 +169,7 @@ with tab3:
     with col1:
         type = st.selectbox(
                 "What type of options stucture?",
-                ('Call Spread','Put Spread','Butterfly','Reverse Butterfly','Box Spread'))
+                ('Call Spread','Put Spread','Straddle','Strangle','Butterfly','Reverse Butterfly','Box Spread'))
     with col2:
             spot = st.number_input("Current spot", min_value=0.0001,key="<strategy1>")
             s_t = spot
