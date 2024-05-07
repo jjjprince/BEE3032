@@ -237,7 +237,7 @@ with tab3:
         st.write(f"Breakeven Spot Price: {round(breakeven_l,4)} and {round(breakeven_h,4)} ")
         st.write("$^*$Breakeven price assumes no movement in underlying option value, prices shown below at expiry")
         st.text("")
-        op_1={'op_type':'p','strike':K1,'tr_type':'b','op_pr':p1}
+        op_1={'op_type':'c','strike':K1,'tr_type':'b','op_pr':p1}
         op_2={'op_type':'p','strike':K1,'tr_type':'b','op_pr':p2}
         fig = op.multi_plotter(spot = s_t, spot_range = 30,op_list=[op_1,op_2])
         st.set_option('deprecation.showPyplotGlobalUse', False)
