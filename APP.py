@@ -249,8 +249,8 @@ with tab3:
             K1 = st.number_input("Call Strike", min_value=0.0001, key="strangk1")
             K2 = st.number_input("Put Strike", min_value=0.0001,key="strangk2")
         with col2:
-            p1 = st.number_input("Price of Higher Strike", min_value=0.0001,key="strangp1")
-            p2 = st.number_input("Price of Lower Strike", min_value=0.0001,key="strangp2")
+            p1 = st.number_input("Price of Call", min_value=0.0001,key="strangp1")
+            p2 = st.number_input("Price of Put", min_value=0.0001,key="strangp2")
 
         st.text("")
         p = p1+p2
