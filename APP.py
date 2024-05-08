@@ -58,7 +58,7 @@ with tab1:
             r  = st.number_input("Domestic Interest Rate (USDXXX) (%)", min_value=0.001, key = "exch")/100
         with col2:
             r_f = st.number_input("Foreign Interest Rate (XXXUSD) (%)",min_value=0.001)/100
-        st.write("In a USD/GBP pair, r is the GBP interest rate and r_f is the US interest rate")
+        st.write("In a USD/GBP pair, GBP interest rate is domestic and foreign is the US interest rate")
     elif type == "Known Income":
         col1, col2 = st.columns(2)
         with col1:
