@@ -71,7 +71,8 @@ class OneStepBinomialTreePricingModel:
         return self.f_u, self.f_d, self.f
  
 class TwoStepBinomialTreePricingModel:
-    def __init__(self,s_u,s_uu,s_ud,s_d,s_dd,K,t,p,r):
+    def __init__(self,s_t,s_u,s_uu,s_ud,s_d,s_dd,K,t,p,r):
+        self.s_t = s_t
         self.s_u = s_u
         self.p = p
         self.s_uu = s_uu
