@@ -156,5 +156,5 @@ class OptionsGreeks:
         return self.gamma
 
     def two_step_theta(self):
-        self.theta = (self.f_ud-self.f)/(2*self.t)
+        self.theta = (self.f_ud-self.f)/(2*(self.t/12))
         return self.theta
