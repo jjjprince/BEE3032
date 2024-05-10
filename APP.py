@@ -464,14 +464,14 @@ with tab5:
                         pricing_model = TwoStepBinomialTreePricingModel(s_u,s_uu,s_ud,s_d,s_dd,K,t,p,r)  # Initialize the model
                         f_uu, f_ud, f_dd, f_u, f_d, f = pricing_model.two_step_call_EU()  # Call the method
                     elif type == "Put":
-                        pricing_model = TwoStepBinomialTreePricingModel(s_t, s_u, s_uu, s_ud, s_d, s_dd, K, t, T, r, p)  # Initialize the model
+                        pricing_model = TwoStepBinomialTreePricingModel(s_u,s_uu,s_ud,s_d,s_dd,K,t,p,r)  # Initialize the model
                         f_uu, f_ud, f_dd, f_u, f_d, f = pricing_model.two_step_put_EU()  # Call the method
                 elif style == "American":
                     if type == "Call":
-                        pricing_model = TwoStepBinomialTreePricingModel(s_t, s_u, s_uu, s_ud, s_d, s_dd, K, t, T, r, p)  # Initialize the model
+                        pricing_model = TwoStepBinomialTreePricingModel(s_u,s_uu,s_ud,s_d,s_dd,K,t,p,r)  # Initialize the model
                         f_uu, f_ud, f_dd, f_u, f_d, f = pricing_model.two_step_call_US()  # Call the method
                     elif type == "Put":
-                        pricing_model = TwoStepBinomialTreePricingModel(s_t, s_u, s_uu, s_ud, s_d, s_dd, K, t, T, r, p)  # Initialize the model
+                        pricing_model = TwoStepBinomialTreePricingModel(s_u,s_uu,s_ud,s_d,s_dd,K,t,p,r)  # Initialize the model
                         f_uu, f_ud, f_dd, f_u, f_d, f = pricing_model.two_step_put_US()  # Call the method
         except ValueError as ve:
             # Handle ValueError
