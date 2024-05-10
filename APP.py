@@ -398,8 +398,8 @@ with tab4:
 
     col1, col2 =st.columns(2)
     st.write("$^*$ Interest rate assuming continuous compounding")
-    st.write("Stock Growth Factor",round(u,6))
-    st.write("Stock Decay Factor",round(d,6))   
+    st.write("Stock Growth Factor",round(u,4))
+    st.write("Stock Decay Factor",round(d,4))   
 
 with tab5:
     title = "Futures and Options Calculations"
