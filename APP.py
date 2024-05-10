@@ -368,13 +368,12 @@ with tab4:
         r = st.number_input("Interest rate (%)$^*$", min_value=0.0001, key="<riskneutral1>") / 100
         s_u = st.number_input("Future Stock Price ($S_u$)", min_value=0.0001, key="<riskneutral4>")
     with col2:
-        time = st.number_input("Number of Months Per Step", min_value=1, key="<riskneutral2>")
-        t = time
+        t = st.number_input("Number of Months Per Step", min_value=1, key="<riskneutral2>")
         s_d = st.number_input("Future Stock Price ($S_d$)", min_value=0.0001, key="<riskneutral5>")
     with col3:
         s_t = st.number_input("Spot Price", min_value=0.0001, key="<riskneutral3>")
-        u = round(s_u / s_t,4)
-        d = round(s_d / s_t,4)
+        u = s_u / s_t
+        d = s_d / s_t
         p = None
         if u != d:
             p = (math.exp(r*t/12)-d)/(u-d)
@@ -399,8 +398,8 @@ with tab4:
 
     col1, col2 =st.columns(2)
     st.write("$^*$ Interest rate assuming continuous compounding")
-    st.write("Stock Growth Factor",round(u,4))
-    st.write("Stock Decay Factor",round(d,4))   
+    st.write("Stock Growth Factor",round(u,6))
+    st.write("Stock Decay Factor",round(d,6))   
 
 with tab5:
     title = "Futures and Options Calculations"
